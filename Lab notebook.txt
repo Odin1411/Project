@@ -34,7 +34,7 @@ Har implementerat en funktion som läser filen rad för rad. Detta tar ungefär 
 med 8 lines. Fuktionen som utför en djupet-först-sökning tar enbart ca 3 ms. Så om något 
 ska förbättras måste det vara den första funktionen. Påverkas mycket av hur stor graf som ska skapas
 grafen måste initsialiseras så att alla noder får plats men görs den för stor kommer den ta
-för mycket utrymme. För en graf med 10 miljoner noder tar det 1123 ms och för en graf
+för mycket utrymme. Tiden det tar beror till stor del på Hur stor grafen sätts till. För en graf med 10 miljoner noder tar det 1123 ms och för en graf
 med 100 miljoner går det inte ( out of memory: java heap space)
 98 ms för 7 rader. på en fil med 85 rader tar depthfirstsearch 144 ms. på en fil med 1063 rader tar det 199 ms.  (har nu satt grafen till 10 milj noder)
 1013 1094 1425. Detta när Grafen sparades som ArrayList<ArrayList<int>>. När grafen sparas som LinkedList<Integer> adj[] (adjacency list) och 1063 rader fil read: 986 ms, dfs: 24 ms. 
@@ -42,7 +42,7 @@ med 100 miljoner går det inte ( out of memory: java heap space)
 overlaps.m4 har 64 056 772 rader 64056772  64056774
 när jag försökte köra den riktiga filen: java.lang.OutOfMemoryError: Java heap space
 försökte med Graph2: java.lang.OutOfMemoryError: Java heap space: failed reallocation of scalar replaced objects
-"vmArgs": "-Xmx4048m",
+"vmArgs": "-Xmx4048m",  
 
 Den stannar på 26 milj. Ökade till 8048. 
 
@@ -51,7 +51,7 @@ Time for task read: 18964512 ms
 Time for task depthfirstsearch: 0 ms
 Time for task histogram: 13512 ms
 
-Nu vet jag antalet noder så ändrar Grafen till en storlek av 63962895 +1. Programmet går nu snabbare. Uppkommer problem när jag kör depthfirstsearch på grafen. 
+Nu vet jag antalet noder ( NEJ KANTER HALLÅ) så ändrar Grafen till en storlek av 63962895 +1. Programmet går nu snabbare. Uppkommer problem när jag kör depthfirstsearch på grafen. 
 När det är rekursion läggs allt på en stack så jag ökar storleken med -Xss515m. Det fungerar nu.
 
 number of components: 317284
@@ -61,8 +61,8 @@ Time for task depthfirstsearch: 312982 ms
 Time for task histogram: 0 ms
 
 Dag 4 
-Försöker föbättra min funktion samt tänka på tids komplexiteten. Har gjort allt med arraylistor men insett att den kanske skulle köra effektivare med linkedlist? 
-Arraylistor måste hela tiden 'rezisas' vilket är onödigt. Dock går det mycket snabbare att komma åt elementen, vet dock inte vad jag borde prioritera. Ska ta reda på hur många 
+Försöker föbättra min funktion samt tänka på tidskomplexiteten. Har gjort allt med arraylistor men insett att den kanske skulle köra effektivare med linkedlist? 
+Arraylistor måste hela tiden 'rezisas' vilket är onödigt. Dock går det mycket snabbare att komma åt elementen, vet dock inte vad jag borde prioritera. Ska ta reda på hur många noder grapen har.
 
  //[[ "$VAR1"- "$VAR2" > 1000 && "$VAR3" -"$VAR4" > 1000 ]]; then
                ## Code here
