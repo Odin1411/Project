@@ -1,0 +1,35 @@
+Raport 
+
+Write a brief report describing your work and your results as a file in your repository. Write the report as if describing
+and documenting for your imaginary collaborator what you have done.
+
+Jag började med att göra en shellscript som räknar antalet kanter vilket var 63962895. och göra tre testfiler, en med ca 10 rader, en med ca 100 och en med ca 1000 rader. 
+En funktion som läser in hela filen, kollar ifall det är tillräckligt stort överlapp i båda avsnitten för en kant och skapar en kant. En hashmap 'identifiers' som översätter varje 
+nod till ett unikt heltal och en hashmap 'nodes' med heltalsidentifierarna som nycklar och antalet grannar som värden. 
+
+Tiden det tar att läsa in filen påverkas i hög grad av storleken på grafen. 
+
+Göra ett histogram i python 
+Min första ide var att skapa en lista
+
+För att beräkna antaket komponenter med fler än Depthfirstsearch. är en rekursiv funktion och mycket minne kommer då läggas på stacken när programmet
+körs vilket ledde till
+
+Time complexity: 
+dfs
+O(V) + O(V) = O(V)
+
+dfsvisit
+Vi besöker varje nod en gång. 
+
+	
+
+number of components: 317284
+number of cliques: 35472
+
+
+Time for task read: 5460931 ms
+Time for task depthfirstsearch: 312982 ms
+
+
+
