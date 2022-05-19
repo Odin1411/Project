@@ -1,27 +1,13 @@
 Lab notebook
-Lab notebook
-The data file contains the following columns:
 
-Identifier for first vertex for an edge.
-Identifier for second vertex of the edge.
-Not relevant in this project. (A number representing similarity)
-Not relevant in this project. (Fraction of identical positions in the overlap.)
-A zero. Unused.
-Start of overlap in first contig.
-End of overlap in first contig.
-Length of first contig.
-Not relevant in this project.
-Start of overlap in second contig.
-End of overlap in second contig.
-Length of second contig.
-
+Dag 1 
 Försöker förstå hur datan kommer att se ut.
 gjorde en liten script file och använde head för att läsa de 10 första raderna och skickade detta 
 till gunzip. head overlaps.m4.gz | gunzip | 
 awk '{print $1,$2,$6,$7,$10,$11}' file1.txt | cat > file2.txt
-
 head -n 100
 
+Dag 2
 använda hashmap och String.hashCode för att få ett unikt heltal från identifierarna. Problemet är att vi kan råka få samma tal från olika strängar.
 Frågor: spara noder och kanter? om vi räknar en kant en gång, kommer vi råka dubbelräkna denna 
 kant?
@@ -32,19 +18,18 @@ adjacent
 α
 For a graph G, α(G) (using the Greek letter alpha) is its independence number (see independent), and α′(G) is its matching number (see matching).
 more overlaps.m4 | grep fp.3.Luci_12D10.ctg.ctg7180000088249
-
 Försöker förstå hur datan kommer att se ut.
 gunzip
 more overlaps.m4 | grep fp.3.Luci_12D10.ctg.ctg7180000088249
 awk '{print $1,$2,$6,$7,$10,$11}' file1.txt >file2.txt
 heap -n komandot  
-
 kan en kant förekomma två gånger? Det kan bli ett problem.
 Vill veta antalet kanter, grad distrubitionen mellan noder, komponenter med minst tre noder och andelen av dessa som är cliques. 
 cliques - kompletta delgrafer 
 min första tanke spara alla noder som nycklar och dess kanter som värden i en hashmap. Typ en arraylist med alla kanter.
 den ser ut att vara sorterad typ?  
 
+Dag 3
 Har implementerat en funktion som läser filen rad för rad. Detta tar ungefär 140 ms för en fil 
 med 8 lines. Fuktionen som utför en djupet-först-sökning tar enbart ca 3 ms. Så om något 
 ska förbättras måste det vara den första funktionen. Påverkas mycket av hur stor graf som ska skapas
@@ -55,15 +40,11 @@ med 100 miljoner går det inte ( out of memory: java heap space)
 1013 1094 1425. Detta när Grafen sparades som ArrayList<ArrayList<int>>. När grafen sparas som LinkedList<Integer> adj[] (adjacency list) och 1063 rader fil read: 986 ms, dfs: 24 ms. 
 
 overlaps.m4 har 64 056 772 rader 64056772  64056774
-
 när jag försökte köra den riktiga filen: java.lang.OutOfMemoryError: Java heap space
-
 försökte med Graph2: java.lang.OutOfMemoryError: Java heap space: failed reallocation of scalar replaced objects
-
--Xmx
 "vmArgs": "-Xmx4048m",
 
-1 miljon tar ca 30 s. Den stannar på 26 milj. Ökade till 8048. Den är uppe på 44.
+Den stannar på 26 milj. Ökade till 8048. 
 
 numberOfEdges: 63962895
 Time for task read: 18964512 ms
