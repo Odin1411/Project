@@ -1,0 +1,143 @@
+Lab notebook
+Lab notebook
+The data file contains the following columns:
+
+Identifier for first vertex for an edge.
+Identifier for second vertex of the edge.
+Not relevant in this project. (A number representing similarity)
+Not relevant in this project. (Fraction of identical positions in the overlap.)
+A zero. Unused.
+Start of overlap in first contig.
+End of overlap in first contig.
+Length of first contig.
+Not relevant in this project.
+Start of overlap in second contig.
+End of overlap in second contig.
+Length of second contig.
+
+Försöker förstå hur datan kommer att se ut.
+gjorde en liten script file och använde head för att läsa de 10 första raderna och skickade detta 
+till gunzip. head overlaps.m4.gz | gunzip | 
+awk '{print $1,$2,$6,$7,$10,$11}' file1.txt | cat > file2.txt
+
+head -n 100
+
+använda hashmap och String.hashCode för att få ett unikt heltal från identifierarna. Problemet är att vi kan råka få samma tal från olika strängar.
+Frågor: spara noder och kanter? om vi räknar en kant en gång, kommer vi råka dubbelräkna denna 
+kant?
+subset of vertices of an undirected graph such that every two distinct vertices in the clique are adjacent.
+adjacent
+1.  The relation between two vertices that are both endpoints of the same edge.[2]
+2.  The relation between two distinct edges that share an end vertex.[5]
+α
+For a graph G, α(G) (using the Greek letter alpha) is its independence number (see independent), and α′(G) is its matching number (see matching).
+more overlaps.m4 | grep fp.3.Luci_12D10.ctg.ctg7180000088249
+
+Försöker förstå hur datan kommer att se ut.
+gunzip
+more overlaps.m4 | grep fp.3.Luci_12D10.ctg.ctg7180000088249
+awk '{print $1,$2,$6,$7,$10,$11}' file1.txt >file2.txt
+heap -n komandot  
+
+kan en kant förekomma två gånger? Det kan bli ett problem.
+Vill veta antalet kanter, grad distrubitionen mellan noder, komponenter med minst tre noder och andelen av dessa som är cliques. 
+cliques - kompletta delgrafer 
+min första tanke spara alla noder som nycklar och dess kanter som värden i en hashmap. Typ en arraylist med alla kanter.
+den ser ut att vara sorterad typ?  
+
+Har implementerat en funktion som läser filen rad för rad. Detta tar ungefär 140 ms för en fil 
+med 8 lines. Fuktionen som utför en djupet-först-sökning tar enbart ca 3 ms. Så om något 
+ska förbättras måste det vara den första funktionen. Påverkas mycket av hur stor graf som ska skapas
+grafen måste initsialiseras så att alla noder får plats men görs den för stor kommer den ta
+för mycket utrymme. För en graf med 10 miljoner noder tar det 1123 ms och för en graf
+med 100 miljoner går det inte ( out of memory: java heap space)
+98 ms för 7 rader. på en fil med 85 rader tar depthfirstsearch 144 ms. på en fil med 1063 rader tar det 199 ms.  (har nu satt grafen till 10 milj noder)
+1013 1094 1425. Detta när Grafen sparades som ArrayList<ArrayList<int>>. När grafen sparas som LinkedList<Integer> adj[] (adjacency list) och 1063 rader fil read: 986 ms, dfs: 24 ms. 
+
+overlaps.m4 har 64 056 772 rader 64056772  64056774
+
+när jag försökte köra den riktiga filen: java.lang.OutOfMemoryError: Java heap space
+
+försökte med Graph2: java.lang.OutOfMemoryError: Java heap space: failed reallocation of scalar replaced objects
+
+-Xmx
+"vmArgs": "-Xmx4048m",
+
+1 miljon tar ca 30 s. Den stannar på 26 milj. Ökade till 8048. Den är uppe på 44.
+
+numberOfEdges: 63962895
+Time for task read: 18964512 ms
+Time for task depthfirstsearch: 0 ms
+Time for task histogram: 13512 ms
+
+Nu vet jag antalet noder så ändrar Grafen till en storlek av 63962895 +1. Programmet går nu snabbare. Uppkommer problem när jag kör depthfirstsearch på grafen. 
+När det är rekursion läggs allt på en stack så jag ökar storleken med -Xss515m. Det fungerar nu.
+
+number of components: 317284
+number of cliques: 35472
+Time for task read: 5460931 ms
+Time for task depthfirstsearch: 312982 ms
+Time for task histogram: 0 ms
+
+ //[[ "$VAR1"- "$VAR2" > 1000 && "$VAR3" -"$VAR4" > 1000 ]]; then
+               ## Code here
+
+
+private String reEncode(String identifier) {
+		byte ptext[] = identifier.getBytes();
+		String value = new String(ptext, StandardCharsets.US_ASCII);
+		return value;
+	}
+
+if (truorfalse=true) { //enough for new edge 
+			numberOfEdges= numberOfEdges +1;
+
+	 		if ( edges.get(identifier1) != null  ) { //if it already exists
+				ArrayList<String> edgelist = edges.get(identifier1);
+				edgelist.add(identifier2);
+				edges.put(identifier1, edgelist); } // put first and second vertex into counter
+		    else {
+				edges.put(identifier1, 1);
+			}		
+			
+	}
+        scan.close(); 
+String identifier1 = scan.next(); //first identifier
+		String identifier2 = scan.next(); //second 
+		int start1 = scan.nextInt();
+		int end1 = scan.nextInt();
+		int start2 = scan.nextInt();
+		int end2 = scan.nextInt();
+
+if (identifier.contains("fp.3.Luci")) {
+			identifier = identifier.substring()
+		}
+		else if (identifier.contains("fermi")) {
+
+		}
+		else if (identifier.contains("contig")) {
+			
+		}
+		else {
+
+		}
+  public void dfs() {
+        boolean[] isVisited = new boolean[V];
+        for (int v=0; v<V; v++) {
+          v.visited =false; 
+        }
+        for (int v=0; v<V; v++){
+          if (!v.visited) {
+            dfsVisit(v)
+          
+        }
+      }
+
+      private void dfsVisit(int v){
+        v.visited = true; 
+        for u in neighbor v
+        if not u.visited
+          dfsVisit(u);
+
+      }
+
