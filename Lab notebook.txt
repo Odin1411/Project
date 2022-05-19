@@ -21,13 +21,13 @@ more overlaps.m4 | grep fp.3.Luci_12D10.ctg.ctg7180000088249
 Försöker förstå hur datan kommer att se ut.
 gunzip
 more overlaps.m4 | grep fp.3.Luci_12D10.ctg.ctg7180000088249
-awk '{print $1,$2,$6,$7,$10,$11}' file1.txt >file2.txt
-heap -n komandot  
+awk '{print $1,$2,$6,$7,$10,$11}' file1.txt >file2.txt. Funderar på om jag ska dela upp filen i mindre delar eventuellt skicka in enbart den information som behövs.
+heap -n komandot  Har gjort några testfiler av olika storlekar. som jag kör med. 
 kan en kant förekomma två gånger? Det kan bli ett problem.
 Vill veta antalet kanter, grad distrubitionen mellan noder, komponenter med minst tre noder och andelen av dessa som är cliques. 
 cliques - kompletta delgrafer 
 min första tanke spara alla noder som nycklar och dess kanter som värden i en hashmap. Typ en arraylist med alla kanter.
-den ser ut att vara sorterad typ?  
+den ser ut att vara sorterad typ? 
 
 Dag 3
 Har implementerat en funktion som läser filen rad för rad. Detta tar ungefär 140 ms för en fil 
@@ -59,6 +59,10 @@ number of cliques: 35472
 Time for task read: 5460931 ms
 Time for task depthfirstsearch: 312982 ms
 Time for task histogram: 0 ms
+
+Dag 4 
+Försöker föbättra min funktion samt tänka på tids komplexiteten. Har gjort allt med arraylistor men insett att den kanske skulle köra effektivare med linkedlist? 
+Arraylistor måste hela tiden 'rezisas' vilket är onödigt. Dock går det mycket snabbare att komma åt elementen, vet dock inte vad jag borde prioritera. Ska ta reda på hur många 
 
  //[[ "$VAR1"- "$VAR2" > 1000 && "$VAR3" -"$VAR4" > 1000 ]]; then
                ## Code here
