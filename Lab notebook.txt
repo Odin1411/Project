@@ -69,6 +69,14 @@ ska jag kanske ändra så att identifiers inte sparar hela strängen utan enbart
 ser att antalet kanter skiljer sig numberOfEdges: 63962895 i mitt program  63920640 med scellscript. Konstigt. fil med 1063 rader: 1062 med shellscript, 1063 med mitt program. Ändrade så att om en nod redan finns med bland en annan nods grannar så räknas inte den kanten igen. nu räknas samma fil istället ha 1056 rader.
 Kör overlaps.m4 igen. Det tar längre och längre tid mellan varje miljonte rad. 
 
+number of nodes: 11393435
+number of edges: 63408137
+number of components: 273187
+number of cliques: 36418
+Time for task read: 11854212 ms
+Time for task histogram: 15083 ms
+Time for task depthfirstsearch: 1993970 ms
+
 testade byta till ASCII men det gjorde ingen skillnad för tiden.
 private String reEncode(String identifier) {
 		byte ptext[] = identifier.getBytes();
