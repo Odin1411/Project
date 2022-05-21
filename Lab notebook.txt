@@ -46,7 +46,7 @@ Time for task histogram: 13512 ms
 
 number of nodes: 11393435
 Nu vet jag antalet noder så ändrar Grafen till en storlek av 11393435 +1. Programmet går nu snabbare. Uppkommer problem när jag kör depthfirstsearch på grafen. 
-När det är rekursion läggs allt på en stack så jag ökar storleken med -Xss515m. Det fungerar nu. ser att antalet kanter skiljer sig numberOfEdges: 63962895 i mitt program  63920640 med scellscript. Konstigt. 1062 med ss (fil med 
+När det är rekursion läggs allt på en stack så jag ökar storleken med -Xss515m. Det fungerar nu. ser att antalet kanter skiljer sig numberOfEdges: 63962895 i mitt program  63920640 med scellscript. Konstigt. fil med 1063 rader: 1062 med shellscript, 1063 med mitt program. 
 
 
 number of components: 317284
