@@ -39,14 +39,14 @@ försökte med Graph2 (linkedlist): java.lang.OutOfMemoryError: Java heap space:
 Försökte öka heapspace med "vmArgs": "-Xmx4048m",  i launch.json filen.
 Den stannar på 26 milj. Ökade till 8048. Nu funkar det.63920640
 
-numberOfEdges: 63962895
+
 Time for task read: 18964512 ms
 Time for task depthfirstsearch: 0 ms
 Time for task histogram: 13512 ms
 
 number of nodes: 11393435
 Nu vet jag antalet noder så ändrar Grafen till en storlek av 11393435 +1. Programmet går nu snabbare. Uppkommer problem när jag kör depthfirstsearch på grafen. 
-När det är rekursion läggs allt på en stack så jag ökar storleken med -Xss515m. Det fungerar nu. ser att antalet kanter skiljer sig numberOfEdges: 63962895 i mitt program  63920640 med scellscript. Konstigt. fil med 1063 rader: 1062 med shellscript, 1063 med mitt program. 
+När det är rekursion läggs allt på en stack så jag ökar storleken med -Xss515m. Det fungerar nu. 
 
 
 number of components: 317284
@@ -61,12 +61,14 @@ Arraylistor måste hela tiden 'rezisas' vilket är onödigt. Dock går det mycke
 Testkörde en gång utan att skapa graf 
 Time for task read: 1817930 ms
 
+numberOfEdges: 63962895
 Time for task read: 7655093 ms
 Time for task histogram: 0 ms
 Time for task depthfirstsearch: 1117613 ms
 
 testade att istället ha en hashmap som räknar grannar så räknade jag för varje nod i grafen storleken på grannlistan. Detta verkar ta längre tid dock. 
 ska jag kanske ändra så att identifiers inte sparar hela strängen utan enbart en del av den?
+ser att antalet kanter skiljer sig numberOfEdges: 63962895 i mitt program  63920640 med scellscript. Konstigt. fil med 1063 rader: 1062 med shellscript, 1063 med mitt program. Ändrade så att om en nod redan finns med bland en annan nods grannar så räknas inte den kanten igen. nu räknas samma fil istället ha 1056 rader.
 
 
 
