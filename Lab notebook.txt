@@ -3,9 +3,11 @@ Lab notebook
 Dag 1 
 Försöker förstå hur datan kommer att se ut.
 gjorde en liten script file och använde head för att läsa de 10 första raderna och skickade detta 
-till gunzip. head overlaps.m4.gz | gunzip | 
-awk '{print $1,$2,$6,$7,$10,$11}' file1.txt | cat > file2.txt
-head -n 100
+till gunzip
+head overlaps.m4.gz | gunzip | file0.txt 
+head -n 
+funderar på att göra något liknande så man bara skickar med den relevanta informationen? awk '{print $1,$2,$6,$7,$10,$11}' file1.txt | cat > file2.txt
+more overlaps.m4
 
 Dag 2
 använda hashmap och String.hashCode för att få ett unikt heltal från identifierarna. Problemet är att vi kan råka få samma tal från olika strängar.
@@ -34,7 +36,7 @@ Har implementerat en funktion som läser filen rad för rad. Detta tar ungefär 
 med 8 lines. Fuktionen som utför en djupet-först-sökning tar enbart ca 3 ms. Så om något 
 ska förbättras måste det vara den första funktionen. Påverkas mycket av hur stor graf som ska skapas
 grafen måste initsialiseras så att alla noder får plats men görs den för stor kommer den ta
-för mycket utrymme. Tiden det tar beror till stor del på Hur stor grafen sätts till. För en graf med 10 miljoner noder tar det 1123 ms och för en graf
+för mycket utrymme. För en graf med 10 miljoner noder tar det 1123 ms och för en graf
 med 100 miljoner går det inte ( out of memory: java heap space)
 98 ms för 7 rader. på en fil med 85 rader tar depthfirstsearch 144 ms. på en fil med 1063 rader tar det 199 ms.  (har nu satt grafen till 10 milj noder)
 1013 1094 1425. Detta när Grafen sparades som ArrayList<ArrayList<int>>. När grafen sparas som LinkedList<Integer> adj[] (adjacency list) och 1063 rader fil read: 986 ms, dfs: 24 ms. 
