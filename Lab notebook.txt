@@ -66,6 +66,7 @@ Time for task histogram: 0 ms
 Time for task depthfirstsearch: 1117613 ms
 
 testade att istället ha en hashmap som räknar grannar så räknade jag för varje nod i grafen storleken på grannlistan. Detta verkar ta längre tid dock. 
+ska jag kanske ändra så att identifiers inte sparar hela strängen utan enbart en del av den?
 
 
 
