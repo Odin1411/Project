@@ -6,7 +6,7 @@ and documenting for your imaginary collaborator what you have done.
 Jag började med att göra en shellscript som räknar antalet kanter och göra tre minde testfiler för debugging, en med ca 10 rader, en med ca 100 och en med ca 1000 rader. 
 I javafilen Project har jag en funktion 'read' som läser in hela filen rad för rad. Har en funktion 'assignIntIdentifier som översätter varje identifierare
 till ett  unikt heltal och en hashmap 'identifiers' som sparar strängarna som nycklar och heltalen som värden. n hashmap 'nodes' med heltalsidentifierarna som nycklar och antalet grannar som värden. 
-Valde att använda mig av hashmaps eftersom den har en konstant tidskomplexitet för att kolla get() och sätta in put() är tids komplexiteten O(1).
+Valde att använda mig av hashmaps eftersom den har en konstant tidskomplexitet för att kolla get() och sätta in put() är tidskomplexiteten O(1).
 
 
 'enoughOverlap' kollar för varje rad ifall det är tillräckligt stort överlapp i båda avsnitten för en kant och skapar isåfall en kant. Såg till att en kant inte råkar räknas fler gånger om samma kant uppkommer fler gånger i filen.
