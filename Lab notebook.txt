@@ -78,55 +78,5 @@ private String reEncode(String identifier) {
 		return value;
 	}
 
-if (truorfalse=true) { //enough for new edge 
-			numberOfEdges= numberOfEdges +1;
 
-	 		if ( edges.get(identifier1) != null  ) { //if it already exists
-				ArrayList<String> edgelist = edges.get(identifier1);
-				edgelist.add(identifier2);
-				edges.put(identifier1, edgelist); } // put first and second vertex into counter
-		    else {
-				edges.put(identifier1, 1);
-			}		
-			
-	}
-        scan.close(); 
-String identifier1 = scan.next(); //first identifier
-		String identifier2 = scan.next(); //second 
-		int start1 = scan.nextInt();
-		int end1 = scan.nextInt();
-		int start2 = scan.nextInt();
-		int end2 = scan.nextInt();
-
-if (identifier.contains("fp.3.Luci")) {
-			identifier = identifier.substring()
-		}
-		else if (identifier.contains("fermi")) {
-
-		}
-		else if (identifier.contains("contig")) {
-			
-		}
-		else {
-
-		}
-  public void dfs() {
-        boolean[] isVisited = new boolean[V];
-        for (int v=0; v<V; v++) {
-          v.visited =false; 
-        }
-        for (int v=0; v<V; v++){
-          if (!v.visited) {
-            dfsVisit(v)
-          
-        }
-      }
-
-      private void dfsVisit(int v){
-        v.visited = true; 
-        for u in neighbor v
-        if not u.visited
-          dfsVisit(u);
-
-      }
 
