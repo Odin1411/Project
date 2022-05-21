@@ -70,6 +70,8 @@ testade att istället ha en hashmap som räknar grannar så räknade jag för va
 ska jag kanske ändra så att identifiers inte sparar hela strängen utan enbart en del av den?
 ser att antalet kanter skiljer sig numberOfEdges: 63962895 i mitt program  63920640 med scellscript. Konstigt. fil med 1063 rader: 1062 med shellscript, 1063 med mitt program. Ändrade så att om en nod redan finns med bland en annan nods grannar så räknas inte den kanten igen. nu räknas samma fil istället ha 1056 rader.
 
+Kör overlaps.m4 igen. Det tar längre och längre tid mellan varje miljonte rad. 
+
 
 
 private String reEncode(String identifier) {
