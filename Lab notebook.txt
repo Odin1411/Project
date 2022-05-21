@@ -14,31 +14,30 @@ Ska nog använda hashmap. String.hashCode för att få ett unikt heltal från id
 Frågor: spara noder och kanter? om vi räknar en kant en gång, kommer vi råka dubbelräkna denna kant?
 more overlaps.m4.gz | grep fp.3.Luci_12D10.ctg.ctg7180000088249
 Funderar på om jag ska dela upp filen i mindre delar eventuellt skicka in enbart den information som behövs.
-Har gjort några testfiler av olika storlekar. som jag kör med. 
-kan en kant förekomma två gånger? Det kan bli ett problem.
+Har gjort några testfiler av olika storlekar som jag kör med. kan en kant förekomma två gånger? Det kan bli ett problem.
 Vill veta antalet kanter, grad distrubitionen mellan noder, komponenter med minst tre noder och andelen av dessa som är cliques. 
 components är alla delgrafer och cliques är kompletta delgrafer. där alla noder sitter ihop med varandra som jag har förstått det 
-min första tanke spara alla noder som nycklar och dess kanter som värden i en hashmap. Typ en arraylist med alla kanter.
-den ser ut att vara sorterad typ? 
+min första tanke spara alla noder som nycklar och dess grannar som värden i en hashmap. Typ en arraylist med alla grannar. Funderar på hur jag ska översätta identifierarna till heltal.
+
 
 Dag 3
 körde gunzip på hela filen. 
 awk '{if (($7- $6 > 1000) && ($11 -$10 > 1000 )) print $1}' overlaps.m4 | wc -l  
-Nu vet jag antalet kanter.
-Har implementerat en funktion som läser filen rad för rad. Detta tar ungefär 140 ms för en fil 
-med 8 lines. Sparar grafen som en ArrayList med en ArrayList på varje index. identifierare 0 representeras av index 0 i listan. där sparas en lista med alla dess grannar. Har även skapat en djupet-först-sökning funktion. Fuktionen tar enbart ca 3 ms för filen med 8 lines. Så om något 
-ska förbättras måste det vara den första funktionen. Påverkas mycket av hur stor graf som ska skapas
-grafen måste initsialiseras så att alla noder får plats men görs den för stor kommer den ta
-för mycket utrymme. För en graf med 10 miljoner noder tar det 1123 ms och för en graf
+Nu vet jag antalet kanter. 63920640.
+För att översätta sträng identifierarna till heltal sparar jag de som nycklar i en hashmap och har en counter som ökar varje gång som den stöter på en sträng för 
+första gången. Har implementerat en funktion som läser filen rad för rad. Detta tar ungefär 140 ms för en fil 
+med 8 lines. Den sparar även grafen som en ArrayList med en ArrayList på varje index. identifierare 0 representeras av index 0 i listan. 
+där sparas en lista med alla dess grannar. Har även skapat en djupet-först-sökning funktion. Fuktionen tar enbart ca 3 ms för filen med 8 lines. Så om något 
+ska förbättras måste det vara den första funktionen. Påverkas mycket av hur stor graf som ska skapas. grafen måste initsialiseras så att alla noder får plats men görs den för stor kommer den ta för mycket utrymme. För en graf med 10 miljoner noder tar det 1123 ms och för en graf
 med 100 miljoner går det inte ( out of memory: java heap space)
-98 ms för 7 rader. på en fil med 85 rader tar depthfirstsearch 144 ms. på en fil med 1063 rader tar det 199 ms.  (har nu satt grafen till 10 milj noder)
-1013 1094 1425. Detta när Grafen sparades som ArrayList<ArrayList<int>>. När grafen sparas som LinkedList<Integer> adj[] (adjacency list) och 1063 rader fil read: 986 ms, dfs: 24 ms. 
+för på en fil med 7 rader tar depthfirstsearch 98 ms. på en fil med 85 rader 144 ms. på en fil med 1063 rader tar det 199 ms.  (har nu satt grafen till 10 milj noder)
+När Grafen sparades som ArrayList<ArrayList<int>> (1063 rader) 1013 ms. När grafen sparas som LinkedList<Integer> adj[] (också en linkedlist) read: 986 ms, dfs: 24 ms. 
 
-overlaps.m4 har 64 056 772 rader 64056772  64056774
-när jag försökte köra den riktiga filen: java.lang.OutOfMemoryError: Java heap space
-försökte med Graph2: java.lang.OutOfMemoryError: Java heap space: failed reallocation of scalar replaced objects
-"vmArgs": "-Xmx4048m",  
-Den stannar på 26 milj. Ökade till 8048. 
+Dag 4
+overlaps.m4 har 64 056 772 rader. När jag försökte köra mitt program på den riktiga filen: java.lang.OutOfMemoryError: Java heap space
+försökte med Graph2 (linkedlist): java.lang.OutOfMemoryError: Java heap space: failed reallocation of scalar replaced objects. 
+Försökte öka heapspace med "vmArgs": "-Xmx4048m",  i launch.json filen.
+Den stannar på 26 milj. Ökade till 8048. Nu funkar det.63920640
 
 numberOfEdges: 63962895
 Time for task read: 18964512 ms
@@ -55,7 +54,7 @@ Time for task read: 5460931 ms
 Time for task depthfirstsearch: 312982 ms
 Time for task histogram: 0 ms
 
-Dag 4 
+Dag 5
 Försöker föbättra min funktion samt tänka på tidskomplexiteten. Har gjort allt med arraylistor men insett att den kanske skulle köra effektivare med linkedlist? 
 Arraylistor måste hela tiden 'rezisas' vilket är onödigt. Dock går det mycket snabbare att komma åt elementen, vet dock inte vad jag borde prioritera. 
 Testkörde en gång utan att skapa graf 
