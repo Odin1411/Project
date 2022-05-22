@@ -118,3 +118,8 @@ number of cliques: 1
 Time for task read: 3414 ms
 Time for task histogram: 1845 ms
 Time for task depthfirstsearch: 637 ms
+
+8 rader Graph
+Time for task read: 863 ms
+Time for task histogram: 1250 ms
+Time for task depthfirstsearch: 92 ms
