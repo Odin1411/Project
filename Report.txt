@@ -1,6 +1,6 @@
 Rapport 
 
-Jag började med att göra en shellscript som räknar antalet kanter och göra tre minde testfiler för debugging och för att se hur lång tid det tog, en med ca 10 rader, 
+Jag började med att göra en shellscript som räknar antalet kanter och göra några minde testfiler för debugging och för att se hur lång tid det tog, en med ca 10 rader, 
 en med ca 100, en med ca 1000 rader, en med 100 000 och en med 200 000.  I javafilen Project har jag min mainfunktion som för varje körning kollar hur lång tid mina 
 tre viktigaste funktioner tar, read, saveHistogram och dfs. Funktionen 'read' läser in hela filen rad för rad. Har en funktion 'assignIntIdentifier som översätter 
 varje identifierare till ett  unikt heltal och en hashmap 'identifiers' som sparar strängarna som nycklar och heltalen som värden. Valde att använda mig av hashmaps 
