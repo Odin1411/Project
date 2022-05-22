@@ -107,14 +107,14 @@ Time for task depthfirstsearch: 358 ms
 number of edges: 99479
 number of components: 1452
 number of cliques: 0
-Time for task read: 2205 ms
-Time for task histogram: 1968 ms
-Time for task depthfirstsearch: 1927 ms
+Time for task read: 2420 ms
+Time for task histogram: 1774 ms
+Time for task depthfirstsearch: 778 ms
 
 200 000 rader linkedlist:
 number of edges: 198757
 number of components: 2433
 number of cliques: 1
-Time for task read: 2806 ms
-Time for task histogram: 2269 ms
-Time for task depthfirstsearch: 1041 ms
+Time for task read: 3414 ms
+Time for task histogram: 1845 ms
+Time for task depthfirstsearch: 637 ms
