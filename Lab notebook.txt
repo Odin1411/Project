@@ -134,7 +134,10 @@ Time for task read: 2647 ms
 Time for task histogram: 1982 ms
 Time for task depthfirstsearch: 291 ms
 
-8 rader Graph
-Time for task read: 863 ms
-Time for task histogram: 1250 ms
-Time for task depthfirstsearch: 92 ms
+sista körningen:
+number of edges: 63408137
+number of components: 273187
+number of cliques: 36418
+Time for task read: 7217635 ms
+Time for task histogram: 6592 ms
+Time for task depthfirstsearch: 2090124 ms
