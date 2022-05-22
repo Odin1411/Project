@@ -92,4 +92,11 @@ number of cliques: 0
 Time for task read: 2707 ms
 Time for task depthfirstsearch: 278 ms
 
+200 000 rader:
+number of edges: 198757
+number of components: 2433
+number of cliques: 1
+Time for task read: 3748 ms
+Time for task histogram: 0 ms
+Time for task depthfirstsearch: 358 ms
 
