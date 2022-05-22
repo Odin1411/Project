@@ -5,7 +5,7 @@ and documenting for your imaginary collaborator what you have done.
 
 Jag började med att göra en shellscript som räknar antalet kanter och göra tre minde testfiler för debugging, en med ca 10 rader, en med ca 100 och en med ca 1000 rader. 
 I javafilen Project har jag en funktion 'read' som läser in hela filen rad för rad. Har en funktion 'assignIntIdentifier som översätter varje identifierare
-till ett  unikt heltal och en hashmap 'identifiers' som sparar strängarna som nycklar och heltalen som värden. n hashmap 'nodes' med heltalsidentifierarna som nycklar och antalet grannar som värden. 
+till ett  unikt heltal och en hashmap 'identifiers' som sparar strängarna som nycklar och heltalen som värden.
 Valde att använda mig av hashmaps eftersom den har en konstant tidskomplexitet för att kolla get() och sätta in put() är tidskomplexiteten O(1).
 
 
@@ -13,22 +13,18 @@ Valde att använda mig av hashmaps eftersom den har en konstant tidskomplexitet 
 Jag valde att representera grafen med en ArrayList där indexet representerar noden och på varje position finns en arraylist som innehåller grannarna. 
 Jag övervägde att använda mig av en linkedlist istället för en arraylist. Fördelen med en
 linkedlist är att det går mycket snabbare att modifiera listan eftersom ... men för en arraylist måstse allt flyttas om. Arraylist använder sig av dynamisk resizing 
-Fördelen med en arraylist är att det går snabbare att kolla upp värden i listan. Eftersom mitt program används för att spara alla noder en gång utan att modifiera dem och göra många 'lookups' så valde jag arraylistor. 
-
+Fördelen med en arraylist är att det går snabbare att kolla upp värden i listan. Eftersom mitt program används för att spara alla noder en gång utan att modifiera dem och göra många 'lookups' så valde jag arraylistor. Men linkedlists hade också funkat. 
 Tiden det tar att läsa in filen påverkas i hög grad av storleken på grafen. Antalet noder som kommer vara med i grafen är 11393435, så jag satte grafens (arraylistans)
-storlek till 11393436. 
-
-För att skapa histogrammet har jag gjort en funktion 'saveHistogram' som sparar antalet grannar från hashmapen 'nodes' för alla noder i en ny fil. Har också gjort ett litet program i python som läser in filen och från den skapar histogrammet med matplotlib.
+storlek till 11393436. Man märker tydligt att desto längre tid som programmet kört (och desto mer som har sparats) desto långsammare går det. För att skapa histogrammet har jag gjort en funktion 'saveHistogram' som sparar för varje nod sparar storleken på grannlistan i en ny fil. Har också gjort ett litet program i python som läser in filen och från den skapar histogrammet med matplotlib.
 
 För att beräkna antaket komponenter och cliques implementerade jag djupetförstsökning. Eftersom det är en rekursiv funktion och mycket minne kommer då läggas på stacken när programmet körs vilket ledde till att det inte fungerade till en början. För att lösa detta 
-ökade jag stacksizem. Valde att använda djupetförstsökning eftersom det kändes ganska naturligt då jag skulle behöva gå igenom alla noder för att se hur de sitter ihop. Tidskomplexiteten för djupetförstsökning är O(V+E).
+ökade jag stacksizen. Valde att använda djupetförstsökning eftersom det kändes ganska naturligt då jag skulle behöva gå igenom alla noder för att se hur de sitter ihop. Tidskomplexiteten för djupetförstsökning är O(V+E).
+För att beräkna antalet komponenter med djupetförstsökning sparas alla noder som sitter ihop i en arraylist. Eftersom jag använde arraylistor var också lätt att beräkna antalet cliques. För alla noder i componentlistan kollar att alla noders grannlistas storlek är storleken på complistan - 1 (alla sitter ihop med alla). Men då hade jag inte tänkt på att vissa kanter kunde potentiellt förekomma flera gånger i filen så jag ändrade på detta. Innan en kant lades till kollar den om noden redan finns med i grannlistan. Detta gjorde att det tog längre tid, contains har tidskomplexiteten O(n). 
+
 'read' fungerade inte till en början på en så stor fil eftersom det när programmet körs läggs så mycket minne på en heap och jag 
 Skrev in detta i launch.json filen för att öka heap size och stack size så att programmet kan köras på en så stor fil:  "vmArgs": "-Xmx8048m -Xss515m",
 Man kommer dit genom Run->Add configuration. 
-	
-Antalet kanter: 63962895
-Antalet komponenter (med åtminstonde tre noder): 317284
-Antalet av dessa som är cliques: 35472
+
 
 nya resultatet:
 Antalet kanter: 63408137
