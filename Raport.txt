@@ -30,6 +30,11 @@ Antalet kanter: 63962895
 Antalet komponenter (med åtminstonde tre noder): 317284
 Antalet av dessa som är cliques: 35472
 
+nya resultatet:
+Antalet kanter: 63408137
+Antalet komponenter (med åtminstonde tre noder): 273187
+Antalet av dessa som är cliques: 36418
+
 histogrammet är bifogat som en egen fil. 
 
 
