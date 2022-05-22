@@ -85,6 +85,11 @@ private String reEncode(String identifier) {
 		String value = new String(ptext, StandardCharsets.US_ASCII);
 		return value;
 	}
-
+gjorde en fil med 100 000 rader: 	
+number of edges: 99479
+number of components: 1452
+number of cliques: 0
+Time for task read: 2707 ms
+Time for task depthfirstsearch: 278 ms
 
 
