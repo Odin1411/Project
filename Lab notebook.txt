@@ -104,11 +104,17 @@ Time for task depthfirstsearch: 358 ms
 
 
 100 000 rader linkedlist: 
-Time for task read: 2227 ms
-Time for task histogram: 2282 ms
-Time for task depthfirstsearch: 7 ms
+number of edges: 99479
+number of components: 1452
+number of cliques: 0
+Time for task read: 2205 ms
+Time for task histogram: 1968 ms
+Time for task depthfirstsearch: 1927 ms
 
 200 000 rader linkedlist:
-Time for task read: 2426 ms
-Time for task histogram: 1246 ms
-Time for task depthfirstsearch: 5 ms
+number of edges: 198757
+number of components: 2433
+number of cliques: 1
+Time for task read: 2806 ms
+Time for task histogram: 2269 ms
+Time for task depthfirstsearch: 1041 ms
