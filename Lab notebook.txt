@@ -123,16 +123,16 @@ set
 number of edges: 99479
 number of components: 1452
 number of cliques: 0
-Time for task read: 2507 ms
-Time for task histogram: 1825 ms
-Time for task depthfirstsearch: 363 ms
+Time for task read: 2224 ms
+Time for task histogram: 1581 ms
+Time for task depthfirstsearch: 342 ms
 set
 number of edges: 198757
 number of components: 2433
 number of cliques: 1
-Time for task read: 3326 ms
-Time for task histogram: 2213 ms
-Time for task depthfirstsearch: 248 ms
+Time for task read: 3599 ms
+Time for task histogram: 2451 ms
+Time for task depthfirstsearch: 322 ms
 
 8 rader Graph
 Time for task read: 863 ms
